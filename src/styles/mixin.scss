@@ -1,0 +1,140 @@
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin scrollBar {
+  &::-webkit-scrollbar-track-piece {
+    background: #d3dce6;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #99a9bf;
+    border-radius: 20px;
+  }
+}
+
+@mixin relative {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+// 设置头部背影色
+@mixin set-navbar-bg($color) {
+  background-color: $color;
+  [data-theme="theme1"] & {
+    background-color: $navbar-theme1;
+  }
+  [data-theme="theme2"] & {
+    background-color: $navbar-theme2;
+  }
+  [data-theme="theme3"] & {
+    background-color: $navbar-theme3;
+  }
+}
+
+// 设置头部字体颜色
+@mixin set-navbar-text-color($color) {
+  color: $color;
+  [data-theme="theme1"] & {
+    color: $navbar-text-color1;
+  }
+  [data-theme="theme2"] & {
+    color: $navbar-text-color2;
+  }
+  [data-theme="theme3"] & {
+    color: $navbar-text-color3;
+  }
+}
+
+// 设置标签页背景
+@mixin set-tag-bg($color) {
+  background-color: $color;
+  [data-theme="theme1"] & {
+    background-color: $tag-theme1;
+  }
+  [data-theme="theme2"] & {
+    background-color: $tag-theme2;
+  }
+  [data-theme="theme3"] & {
+    background-color: $tag-theme3;
+  }
+}
+
+// 设置侧边导航背景
+@mixin set-sidebar-bg($color) {
+  background-color: $color;
+  [data-theme="theme1"] & {
+    background-color: $sidebar-theme1;
+  }
+  [data-theme="theme2"] & {
+    background-color: $sidebar-theme2;
+  }
+  [data-theme="theme3"] & {
+    background-color: $sidebar-theme3;
+  }
+}
+
+//
+@mixin set-color($color) {
+  color: $color;
+  [data-theme="theme1"] & {
+    color: $color1;
+  }
+  [data-theme="theme2"] & {
+    color: $color2;
+  }
+  [data-theme="theme3"] & {
+    color: $color3;
+  }
+}
+
+//移除transition
+@mixin clear-transition {
+  webkit-transition: inherit !important;
+  transition: inherit !important;
+}
+
+// 盒子 + 边框 + 圆角 + 背景
+@mixin box-border-radius($mag: 0, $pd: 20px, $bd: 1px solid #ddd, $bg: #fff, $br: 5px) {
+  margin: $mag;
+  padding: $pd;
+  box-sizing: border-box;
+  border: $bd;
+  background-color: $bg;
+  -webkit-border-radius: $br;
+  border-radius: $br;
+  overflow: hidden;
+}
+
+// 弹性盒子
+@mixin flex-box($jc: flex-start, $ai: flex-start, $fw: nowrap) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-wrap: $fw;
+}
+
+
+// 限制文本宽度，一行显示，过长变省略号
+@mixin one-line-text {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// 限制文本宽度，二行显示，过长变省略号
+@mixin two-line-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
